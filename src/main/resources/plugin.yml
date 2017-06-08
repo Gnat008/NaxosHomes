@@ -1,0 +1,41 @@
+main: me.gnat008.naxoshomes.NaxosHomes
+version: maven-version
+name: NaxosHomes
+Author: Gnat008
+
+commands:
+  naxoshomes:
+    description: Core commands for NaxosHomes
+    aliases: [ns]
+  home:
+    description: Teleport to a home with an optional name
+  homes:
+    description: List all of your homes
+  sethome:
+    description: Set your current location as a home with an optional name
+  delhome:
+    description: Delete a home with the given name
+
+permissions:
+  naxoshomes.admin:
+    default: op
+    children:
+      naxoshomes.command.homes.others: true
+      naxoshomes.command.reload: true
+      naxoshomes.command.version: true
+  naxoshomes.command.help:
+    default: true
+  naxoshomes.command.home:
+    default: true
+  naxoshomes.command.homes:
+    default: true
+  naxoshomes.command.homes.others:
+    default: false
+  naxoshomes.command.sethome:
+    default: true
+  naxoshomes.command.delhome:
+    default: true
+  naxoshomes.command.reload:
+    default: false
+  naxoshomes.command.version:
+    default: false

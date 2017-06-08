@@ -5,8 +5,10 @@ import ch.jalu.injector.InjectorBuilder;
 import me.gnat008.naxoshomes.settings.Settings;
 import me.gnat008.naxoshomes.settings.properties.CoreProperties;
 import org.bukkit.Server;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.JavaPluginLoader;
 
 import java.io.File;
 
@@ -14,6 +16,14 @@ public class NaxosHomes extends JavaPlugin
 {
 
     private Settings settings;
+
+    /*
+     * Constructor for testing purposes.
+     */
+    protected NaxosHomes(final JavaPluginLoader loader, final PluginDescriptionFile description,
+                                final File dataFolder, final File file) {
+        super(loader, description, dataFolder, file);
+    }
 
     @Override
     public void onEnable()
@@ -60,12 +70,12 @@ public class NaxosHomes extends JavaPlugin
         return new Settings(configFile);
     }
 
-    private void injectServices(Injector injector)
+    void injectServices(Injector injector)
     {
 
     }
 
-    private void registerCommands(Injector injector)
+    void registerCommands(Injector injector)
     {
 
     }
