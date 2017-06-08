@@ -1,0 +1,11 @@
+machine:
+  java:
+    version: oraclejdk8
+general:
+  artifacts:
+    - "target/NaxosHomes-*.jar"
+test:
+  override:
+    - mvn clean install -B
+#  post:
+#    - cp ./target/NaxosHomes-*.jar $CIRCLE_ARTIFACTS
